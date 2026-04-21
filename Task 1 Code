@@ -1,0 +1,14 @@
+void setup() {
+  pinMode(12, INPUT_PULLUP); //probe
+  pinMode(13, OUTPUT);      //output pin
+}
+
+void loop() {
+  int state = digitalRead(12);
+  if (state == LOW) {             //if state low, closed circuit
+    digitalWrite(13, HIGH); 
+  } 
+  else {
+    digitalWrite(13, LOW);  // If state high, open circuit 
+  }
+}
